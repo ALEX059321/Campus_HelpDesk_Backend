@@ -14,9 +14,8 @@ import User from "./models/user.model.js";
 const PORT = envVars.PORT || 3000;
 const app = express();
 
-// CORS Middleware
 app.use(cors({
-  origin: ["http://localhost:5173", "http://127.0.0.1:5173"], 
+  origin: ["http://localhost:5173", "http://127.0.0.1:5173", "https://campus-help-desk-frontend.vercel.app"], 
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
   allowedHeaders: ["Content-Type", "Authorization"]

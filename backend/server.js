@@ -60,7 +60,12 @@ app.post("/register", (req, res) => {
 });
 
 
-app.listen(PORT, () => {
-    console.log(`Server is listening at http://localhost:${PORT}`);
-    connectDB();
-});
+connectDB();
+
+if (process.env.NODE_ENV !== "production") {
+    app.listen(PORT, () => {
+        console.log(`Server is listening at http://localhost:${PORT}`);
+    });
+}
+
+export default app;
